@@ -1,5 +1,4 @@
 import './style.css';
+import fetchShows from './modules/displayShows.js';
 
-const url = 'https://www.tvmaze.com/api';
-
-export default url;
+fetchShows();
