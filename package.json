@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "tv-maze",
   "version": "1.0.0",
   "description": "",
@@ -29,3 +30,46 @@
     "stylelint-scss": "^3.21.0"
   }
 }
+=======
+    "name": "webpack-demo",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "webpack serve --open",
+        "build": "webpack",
+        "stylelint": "stylelint \"**/*.{css,scss}\"",
+        "eslint": "eslint .",
+        "hint": "hint .",
+        "test": "jest --watchAll --coverage",
+        "fix": "stylelint \"**/*.{css,scss}\" --fix && eslint . --fix"
+    },
+    "devDependencies": {
+      "@babel/plugin-transform-modules-commonjs": "^7.21.2",
+      "babel-eslint": "10.x",
+      "css-loader": "^6.7.3",
+      "eslint": "7.x",
+      "eslint-config-airbnb-base": "14.x",
+      "eslint-plugin-import": "2.x",
+      "hint": "7.x",
+      "html-webpack-plugin": "^5.5.0",
+      "jest-environment-jsdom": "^29.5.0",
+      "postcss": "^8.4.21",
+      "postcss-loader": "^7.1.0",
+      "postcss-preset-env": "^8.2.0",
+      "style-loader": "^3.3.2",
+      "stylelint": "13.x",
+      "stylelint-config-standard": "21.x",
+      "stylelint-csstree-validator": "1.x",
+      "stylelint-scss": "3.x",
+      "tailwindcss": "^3.3.0",
+      "webpack": "^5.76.3",
+      "webpack-cli": "^5.0.1",
+      "webpack-dev-server": "^4.13.1"
+    },
+    "dependencies": {
+      "jest": "^29.5.0",
+      "lodash": "^4.17.21"
+    }
+  }
+>>>>>>> 8be8d20a166480c6e17adfb426586b685b8d4852
