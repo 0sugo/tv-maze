@@ -1,37 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "tv-maze",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/0sugo/tv-maze.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/0sugo/tv-maze/issues"
-  },
-  "homepage": "https://github.com/0sugo/tv-maze#readme",
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.27.5",
-    "hint": "^7.1.8",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.21.0"
-  }
-}
-=======
-    "name": "webpack-demo",
+    "name": "tv-maze",
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
@@ -44,6 +12,16 @@
         "test": "jest --watchAll --coverage",
         "fix": "stylelint \"**/*.{css,scss}\" --fix && eslint . --fix"
     },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/0sugo/tv-maze.git"
+    },
+    "keywords": [],
+    "author": "",
+    "bugs": {
+      "url": "https://github.com/0sugo/tv-maze/issues"
+    },
+     "homepage": "https://github.com/0sugo/tv-maze#readme",
     "devDependencies": {
       "@babel/plugin-transform-modules-commonjs": "^7.21.2",
       "babel-eslint": "10.x",
@@ -72,4 +50,3 @@
       "lodash": "^4.17.21"
     }
   }
->>>>>>> 8be8d20a166480c6e17adfb426586b685b8d4852
