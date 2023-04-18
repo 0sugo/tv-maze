@@ -8,11 +8,69 @@ body {
   line-height: 1.5;
 }
 
+/* movies section */
+.shows {
+  width: 70%;
+  min-height: 100%;
+  margin: 1rem auto 3rem auto;
+  display: grid;
+  margin-bottom: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.show-card {
+  border: 1px solid #000;
+  color: #000;
+  padding: 6px;
+}
+
+.show-img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.title-likebtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h5 {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.comment-btn {
+  background-color: #fff;
+  padding: 6px;
+  width: 90%;
+  margin: 0 5% 0 5%;
+  box-shadow: 3px 3px #000;
+  border: 1px solid #000;
+}
+
+.likebtn {
+  width: 20px;
+  height: 20px;
+}
+
+.title-likeBtn {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* footer */
 footer {
+  margin-top: 1rem;
+  height: 100px;
+  width: 100%;
   background-color: #000;
   color: #fff;
-  padding: 5%;
+  padding: 3rem;
   text-align: center;
 }
 
