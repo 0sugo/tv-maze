@@ -1,5 +1,5 @@
 {
-    "name": "webpack-demo",
+    "name": "tv-maze",
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
@@ -12,6 +12,16 @@
         "test": "jest --watchAll --coverage",
         "fix": "stylelint \"**/*.{css,scss}\" --fix && eslint . --fix"
     },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/0sugo/tv-maze.git"
+    },
+    "keywords": [],
+    "author": "",
+    "bugs": {
+      "url": "https://github.com/0sugo/tv-maze/issues"
+    },
+     "homepage": "https://github.com/0sugo/tv-maze#readme",
     "devDependencies": {
       "@babel/plugin-transform-modules-commonjs": "^7.21.2",
       "babel-eslint": "10.x",
