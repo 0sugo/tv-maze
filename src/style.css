@@ -34,7 +34,7 @@ a:nth-child(1) {
 }
 
 .logo {
-  content:url('./images/logo.png');
+  content: url('./images/logo.png');
   width: 100px;
   height: 100px;
   border-radius: 50%;
