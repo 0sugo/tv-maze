@@ -38,11 +38,15 @@ body {
   height: 99%;
 }
 .popup-image {
-  content: url('./images/logo.png');
-  height: 25%;
+  height: 35%;
   border: 1px solid red;
   width: auto;
  
+}
+.popup-image img {
+  height: 100%;
+  width:100%;
+
 }
 .popup-header h5{
   text-align: center;

@@ -10,7 +10,7 @@ const fetchShows = async () => {
   const data = await response.json();
 
   for (let i = 0; i < 6; i += 1) {
-    console.log(data[i]);
+    // console.log(data[i]);
     const div = document.createElement('div');
     div.className = 'show-card';
     div.innerHTML = `
