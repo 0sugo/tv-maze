@@ -1,5 +1,5 @@
 import likeBtn from '../images/like.svg';
-import getShows from '../index.js'
+import getShows from './displayPopup.js';
 
 const url = 'https://api.tvmaze.com/shows';
 const showsSection = document.getElementById('allShows');
@@ -46,7 +46,6 @@ const fetchShows = async () => {
     div.append(commentButton);
     commentButton.addEventListener('click',function(){
       fixedId=`${data[i].id-1}`;
-      console.log(fixedId);
       
       getShows (fixedId);
 
@@ -55,25 +54,7 @@ const fetchShows = async () => {
     showsSection.append(div);
   }
 
-console.log(individualButton);
-
-  // let individualButton = document.querySelector(".comment-btn");
-  //   individualButton.addEventListener('click',function(){
-  //     fixedId=individualButton.getAttribute('id');
-  //     console.log("fixedId");
-  //   });
-
-  
-  // console.log(idArray);
 };
-
-
-// function listen(){
-//     individualButton.addEventListener('click',function(){
-//       fixedId=individualButton.getAttribute('id');
-//       console.log("fixedId");
-//     });
-// }
 
 
 export default fetchShows;
