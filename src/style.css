@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 html,
 body {
   margin: 0;
@@ -6,7 +8,8 @@ body {
   width: 100%;
   overflow-x: hidden;
   line-height: 1.5;
-  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.03em;
+  font-family: 'Bebas Neue', cursive;
 }
 /* popup */
 .popup {
@@ -20,6 +23,14 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1;
+  /* display: none; */
+
+}
+.hidden{
+  /* display: none; */
+}
+.close-btn{
+  cursor: pointer;
 
 }
 .popup-content {
@@ -69,10 +80,13 @@ body {
 .feature-item{
   width: 49%;
   text-decoration: none;
-  list-style:none
+  list-style:none;
+  font-size: 12px;
 }
 .comments{
   display: flex;
+  justify-content: center;
+  margin-top: 4%;
   width: 90%;
   height:45% !important;
 }
@@ -110,6 +124,7 @@ form input{
   padding: 2%;
 
 }
+
 /* movies section */
 .shows {
   width: 70%;
