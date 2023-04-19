@@ -34,6 +34,7 @@ const fetchShows = async () => {
 
     const h5 = document.createElement('h5');
     h5.textContent = '5 likes';
+    h5.className = 'likes-count';
     div.append(h5);
 
     const commentButton = document.createElement('button');

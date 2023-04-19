@@ -11,6 +11,7 @@ body {
   letter-spacing: 0.03em;
   font-family: 'Bebas Neue', cursive;
 }
+
 /* popup */
 .popup {
   position: absolute;
@@ -23,16 +24,12 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  /* display: none; */
+}
 
-}
-.hidden{
-  /* display: none; */
-}
-.close-btn{
+.close-btn {
   cursor: pointer;
-
 }
+
 .popup-content {
   background-color: #fff;
   width: 90%;
@@ -42,68 +39,76 @@ body {
   display: flex;
   flex-direction: column;
 }
-.popup-body{
+
+.popup-body {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 99%;
 }
+
 .popup-image {
   height: 35%;
   border: 1px solid red;
   width: auto;
- 
 }
+
 .popup-image img {
   height: 100%;
-  width:100%;
-
+  width: 100%;
 }
-.popup-header h5{
+
+.popup-header h5 {
   text-align: center;
   margin: 10% 0%;
   border: 1px solid green;
 }
-.popup-info{
+
+.popup-info {
   width: 90%;
   padding: 0%;
   border: 1px solid black;
 }
-.feature-list{
+
+.feature-list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin:0%;
+  margin: 0%;
   padding: 1%;
-  
 }
-.feature-item{
+
+.feature-item {
   width: 49%;
   text-decoration: none;
-  list-style:none;
+  list-style: none;
   font-size: 12px;
 }
-.comments{
+
+.comments {
   display: flex;
   justify-content: center;
   margin-top: 4%;
   width: 90%;
-  height:45% !important;
+  height: 45% !important;
 }
-.comments h6{
+
+.comments h6 {
   margin: 0%;
   text-align: center;
   box-sizing: border-box;
 }
-.add-comment form{
+
+.add-comment form {
   border: 1px solid blue;
   display: flex;
   flex-direction: column;
   padding: 2%;
   margin-left: 0%;
-  height:100% !important;
+  height: 100% !important;
 }
-form input{
+
+form input {
   padding: 3%;
   margin: 2%;
   border-radius: 5px;
@@ -112,17 +117,18 @@ form input{
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-.all-comments{
+
+.all-comments {
   border: 1px solid purple;
   width: 60%;
-  height:100% !important;
+  height: 100% !important;
   display: flex;
   flex-direction: column;
 }
-.all-comments p{
+
+.all-comments p {
   margin: 0%;
   padding: 2%;
-
 }
 
 /* movies section */
@@ -154,7 +160,7 @@ form input{
   align-items: center;
 }
 
-h5 {
+.likes-count {
   display: flex;
   justify-content: flex-end;
   font-size: 1rem;
