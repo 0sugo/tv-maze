@@ -3,9 +3,6 @@ import getShows from './displayPopup.js';
 
 const url = 'https://api.tvmaze.com/shows';
 const showsSection = document.getElementById('allShows');
-let individualButton = document.querySelector(".comment-btn");
-let fixedId=0;
-
 
 const fetchShows = async () => {
   showsSection.innerHTML = '';
@@ -44,19 +41,14 @@ const fetchShows = async () => {
     commentButton.className = 'comment-btn';
     commentButton.textContent = 'Comments';
     div.append(commentButton);
-    commentButton.addEventListener('click',function(){
-      fixedId=`${data[i].id-1}`;
-      
-      getShows (fixedId);
+    commentButton.addEventListener('click', () => {
+      const fixedId = `${data[i].id - 1}`;
 
-    })
+      getShows(fixedId);
+    });
 
     showsSection.append(div);
   }
-
 };
 
-
 export default fetchShows;
-
-
