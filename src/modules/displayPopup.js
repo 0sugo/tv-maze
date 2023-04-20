@@ -95,7 +95,20 @@ async function getShows(fixedId) {
           }),
 
         });
-        
+        setTimeout(async () => {
+          const response = await fetch(involvementUrl);
+          const data = await response.json();
+          data.forEach((element) => {
+            const p = document.createElement('li');
+
+            p.textContent += element.creation_date;
+            p.textContent += ' ';
+            p.textContent += element.username;
+            p.textContent += ':';
+            p.textContent += element.comment;
+            commentP.append(p);
+          });
+        }, 600);
 
         // console.log(desiredName);
         // console.log(desiredInsights);
