@@ -110,8 +110,20 @@ async function getShows(fixedId) {
           });
         }, 600);
 
-        // console.log(desiredName);
-        // console.log(desiredInsights);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
       });
 
       const h6 = document.createElement('h6');
@@ -153,5 +165,12 @@ async function getShows(fixedId) {
       popUP.append(popupDiv);
     });
 }
+
+
+
+
+
+
+
 
 export default getShows;
