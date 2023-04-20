@@ -1,7 +1,6 @@
 // import fetchShows from './modules/displayShows.js';
 import fetchComments from './showComments.js';
 
-
 const endPoint = 'https://api.tvmaze.com/shows';
 const popUP = document.querySelector('.here');
 async function getShows(fixedId) {
@@ -100,7 +99,7 @@ async function getShows(fixedId) {
       allComments.append(h62);
 
       const commentP = document.createElement('ul');
-      fetchComments(`${data[fixedId].name}`,commentP);
+      fetchComments(`${data[fixedId].name}`, commentP);
 
       allComments.append(commentP);
       comments.append(allComments);
