@@ -9,7 +9,7 @@ const fetchLikes = async (name, h5Tag) => {
         const countOfLikes = el.likes;
         if (countOfLikes === 1) {
           h5Tag.innerHTML = `${countOfLikes} like`;
-        } else if (countOfLikes === 1) {
+        } else if (countOfLikes === 0) {
           h5Tag.innerHTML = '0 likes';
         } else {
           h5Tag.innerHTML = `${countOfLikes} likes`;

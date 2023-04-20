@@ -3,6 +3,7 @@ import getShows from './displayPopup.js';
 import fetchLikes from './showLikes.js';
 
 const url = 'https://api.tvmaze.com/shows';
+const involvementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/likes';
 const showsSection = document.getElementById('allShows');
 
 const fetchShows = async () => {
@@ -21,6 +22,8 @@ const fetchShows = async () => {
     showImg.alt = `${data[i].name}`;
     div.append(showImg);
 
+    const h5 = document.createElement('h5');
+
     const showDiv = document.createElement('div');
     showDiv.className = 'title-likebtn';
     const h4 = document.createElement('h4');
@@ -28,12 +31,38 @@ const fetchShows = async () => {
     const likeImg = document.createElement('img');
     likeImg.className = 'likebtn';
     likeImg.src = `${likeBtn}`;
+    likeImg.style.cursor = 'pointer';
+    likeImg.addEventListener('click', async () => {
+      h5.innerHTML = '';
+      fetch(involvementUrl, {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify({
+          item_id: `${data[i].name}`,
+        }),
+      });
+      const response = await fetch(involvementUrl);
+      const result = await response.json();
+      result.forEach((el) => {
+        if (el.item_id === `${data[i].name}`) {
+          const countOfLikes = el.likes;
+          if (countOfLikes === 1) {
+            h5.innerHTML = `${countOfLikes} like`;
+          } else if (countOfLikes === 1) {
+            h5.innerHTML = '0 likes';
+          } else {
+            h5.innerHTML = `${countOfLikes} likes`;
+          }
+        }
+      });
+    });
 
     showDiv.append(h4);
     showDiv.append(likeImg);
     div.append(showDiv);
 
-    const h5 = document.createElement('h5');
     fetchLikes(`${data[i].name}`, h5);
     h5.className = 'likes-count';
     div.append(h5);
