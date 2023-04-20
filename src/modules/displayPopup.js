@@ -9,6 +9,8 @@ async function getShows(fixedId) {
   })
     .then((response) => response.json())
     .then((data) => {
+      const commentP = document.createElement('ul');
+
       const popupDiv = document.createElement('div');
       popupDiv.className = 'popup';
 
@@ -71,6 +73,33 @@ async function getShows(fixedId) {
       addComment.className = 'add-comment';
 
       const form = document.createElement('form');
+      form.addEventListener('submit', (e) => {
+        commentP.innerHTML = '';
+        e.preventDefault();
+        const desiredName = document.getElementById('named').value;
+        const desiredInsights = document.getElementById('insight').value;
+        const involvementUrl2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/comments';
+        const involvementUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/comments?item_id=${data[fixedId].name}`;
+
+        fetch(involvementUrl2, {
+          method: 'POST',
+          headers: {
+            'content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+
+            item_id: `${data[fixedId].name}`,
+            username: desiredName,
+            comment: desiredInsights,
+
+          }),
+
+        });
+        
+
+        // console.log(desiredName);
+        // console.log(desiredInsights);
+      });
 
       const h6 = document.createElement('h6');
       h6.textContent = 'Add comment';
@@ -79,10 +108,12 @@ async function getShows(fixedId) {
       const nameInput = document.createElement('input');
       nameInput.type = 'text';
       nameInput.placeholder = 'name';
+      nameInput.id = 'named';
 
       const insightInput = document.createElement('input');
       insightInput.type = 'text';
       insightInput.placeholder = 'Your insights';
+      insightInput.id = 'insight';
 
       const submitInput = document.createElement('input');
       submitInput.type = 'submit';
@@ -98,7 +129,6 @@ async function getShows(fixedId) {
       h62.textContent = 'Comments(3)';
       allComments.append(h62);
 
-      const commentP = document.createElement('ul');
       fetchComments(`${data[fixedId].name}`, commentP);
 
       allComments.append(commentP);
