@@ -45,7 +45,6 @@ const fetchShows = async () => {
     div.append(commentButton);
     commentButton.addEventListener('click', () => {
       const fixedId = `${data[i].id - 1}`;
-
       getShows(fixedId);
     });
 
