@@ -109,21 +109,6 @@ async function getShows(fixedId) {
             commentP.append(p);
           });
         }, 600);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
       });
 
       const h6 = document.createElement('h6');
@@ -165,12 +150,5 @@ async function getShows(fixedId) {
       popUP.append(popupDiv);
     });
 }
-
-
-
-
-
-
-
 
 export default getShows;
