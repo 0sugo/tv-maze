@@ -1,5 +1,6 @@
 import likeBtn from '../images/like.svg';
 import getShows from './displayPopup.js';
+import fetchLikes from './showLikes.js';
 
 const url = 'https://api.tvmaze.com/shows';
 const showsSection = document.getElementById('allShows');
@@ -33,7 +34,7 @@ const fetchShows = async () => {
     div.append(showDiv);
 
     const h5 = document.createElement('h5');
-    h5.textContent = '5 likes';
+    fetchLikes(`${data[i].name}`, h5);
     h5.className = 'likes-count';
     div.append(h5);
 
