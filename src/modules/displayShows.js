@@ -48,7 +48,6 @@ const fetchShows = async () => {
       const item1 = `${data[i].name}`;
 
       getShows(fixedId);
-      // fetchComments(item1,insert);
     });
 
     showsSection.append(div);
