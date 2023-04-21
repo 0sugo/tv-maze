@@ -1,12 +1,11 @@
 // import fetchShows from './modules/displayShows.js';
 import fetchComments from './showComments.js';
-import counter from './commentCounter.js'
+import counter from './commentCounter.js';
 
 const endPoint = 'https://api.tvmaze.com/shows';
 const popUP = document.querySelector('.here');
 const commentP = document.createElement('ul');
 const h62 = document.createElement('h6');
-
 
 async function getShows(fixedId) {
   await fetch(endPoint, {
@@ -14,7 +13,6 @@ async function getShows(fixedId) {
   })
     .then((response) => response.json())
     .then((data) => {
-
       const popupDiv = document.createElement('div');
       popupDiv.className = 'popup';
 
@@ -101,16 +99,9 @@ async function getShows(fixedId) {
         });
         setTimeout(async () => {
           const response = await fetch(involvementUrl);
-          let data2 = await response.json();
+          const data2 = await response.json();
 
-        
-          setTimeout(()=>{
-          ctr.innerHTML = `Comments ${data2.length}`;
-        
-              },20);
-
-      
-            counter(h62,data2);
+          counter(h62, data2);
 
           data2.forEach((element) => {
             const p = document.createElement('li');
@@ -121,14 +112,8 @@ async function getShows(fixedId) {
             p.textContent += ':';
             p.textContent += element.comment;
             commentP.append(p);
-
-            
           });
         }, 600);
-
-        // 
-
-        
       });
 
       const h6 = document.createElement('h6');

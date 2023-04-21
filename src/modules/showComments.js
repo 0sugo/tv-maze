@@ -1,8 +1,6 @@
-let counter=0;
 const fetchComments = async (item1, insertP) => {
   const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/comments?item_id=${item1}`);
   const result = await response.json();
-
 
   result.forEach((element) => {
     const p = document.createElement('li');
@@ -14,17 +12,11 @@ const fetchComments = async (item1, insertP) => {
     p.textContent += element.comment;
     insertP.append(p);
   });
-  setTimeout(()=>{
-  counter =result.length;
-  const ctr = document.getElementById('ctr');
-  ctr.innerHTML = `Comments ${counter}`;
-
-  },1);
-
-  
-
+  setTimeout(() => {
+    const counter = result.length;
+    const ctr = document.querySelector('#ctr');
+    ctr.innerHTML = `Comments ${counter}`;
+  }, 1);
 };
-
-
 
 export default fetchComments;
