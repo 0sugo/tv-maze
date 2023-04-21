@@ -44,6 +44,7 @@ async function getShows(fixedId) {
 
       const h5 = document.createElement('h5');
       h5.textContent = `${data[fixedId].name}`;
+      console.log(h5);
       popupHeader.append(h5);
 
       const popupInfo = document.createElement('div');
@@ -53,15 +54,19 @@ async function getShows(fixedId) {
       featureList.className = 'feature-list';
 
       const itemGenre = document.createElement('li');
+      itemGenre.className = 'feature-item';
       itemGenre.textContent = `Genres:${data[fixedId].genres}`;
 
       const itemRating = document.createElement('li');
+      itemRating.className = 'feature-item';
       itemRating.textContent = `Rating:${data[fixedId].rating.average}`;
 
       const itemLanguage = document.createElement('li');
+      itemLanguage.className = 'feature-item';
       itemLanguage.textContent = `Language:${data[fixedId].language}`;
 
       const itemPremiered = document.createElement('li');
+      itemPremiered.className = 'feature-item';
       itemPremiered.textContent = `Premiered:${data[fixedId].premiered}`;
 
       featureList.append(itemGenre, itemRating, itemLanguage, itemPremiered);
@@ -69,7 +74,7 @@ async function getShows(fixedId) {
       popupBody.append(popupInfo);
 
       const comments = document.createElement('div');
-      comments.className = 'comment';
+      comments.className = 'comments';
 
       const addComment = document.createElement('div');
       addComment.className = 'add-comment';
@@ -80,8 +85,8 @@ async function getShows(fixedId) {
         e.preventDefault();
         const desiredName = document.getElementById('named').value;
         const desiredInsights = document.getElementById('insight').value;
-        const involvementUrl2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/comments';
-        const involvementUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/comments?item_id=${data[fixedId].name}`;
+        const involvementUrl2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uqwxRfgCp5Q5KfywJwpo/comments';
+        const involvementUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uqwxRfgCp5Q5KfywJwpo/comments?item_id=${data[fixedId].name}`;
 
         fetch(involvementUrl2, {
           method: 'POST',
@@ -105,6 +110,7 @@ async function getShows(fixedId) {
           counter(ctr, commentP);
 
           data2.forEach((element) => {
+            commentP.innerHTML = '';
             const p = document.createElement('li');
 
             p.textContent += element.creation_date;
