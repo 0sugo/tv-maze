@@ -100,9 +100,10 @@ async function getShows(fixedId) {
         setTimeout(async () => {
           const response = await fetch(involvementUrl);
           const data2 = await response.json();
+          const ctr = document.getElementById('ctr');
 
-          counter(ctr,commentP);
-      
+          counter(ctr, commentP);
+
           data2.forEach((element) => {
             const p = document.createElement('li');
 
@@ -116,7 +117,6 @@ async function getShows(fixedId) {
             document.getElementById('named').value = '';
           });
         }, 600);
-
       });
 
       const h6 = document.createElement('h6');
