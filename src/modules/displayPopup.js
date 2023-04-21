@@ -44,7 +44,6 @@ async function getShows(fixedId) {
 
       const h5 = document.createElement('h5');
       h5.textContent = `${data[fixedId].name}`;
-      console.log(h5);
       popupHeader.append(h5);
 
       const popupInfo = document.createElement('div');
