@@ -1,6 +1,7 @@
 import likeBtn from '../images/like.svg';
 import getShows from './displayPopup.js';
 import fetchLikes from './showLikes.js';
+import getShowsCount from './showsCounter.js';
 
 const url = 'https://api.tvmaze.com/shows';
 const involvementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/likes';
@@ -43,20 +44,22 @@ const fetchShows = async () => {
           item_id: `${data[i].name}`,
         }),
       });
-      const response = await fetch(involvementUrl);
-      const result = await response.json();
-      result.forEach((el) => {
-        if (el.item_id === `${data[i].name}`) {
-          const countOfLikes = el.likes;
-          if (countOfLikes === 1) {
-            h5.innerHTML = `${countOfLikes} like`;
-          } else if (countOfLikes === 1) {
-            h5.innerHTML = '0 likes';
-          } else {
-            h5.innerHTML = `${countOfLikes} likes`;
+      setTimeout(async () => {
+        const response = await fetch(involvementUrl);
+        const result = await response.json();
+        result.forEach((el) => {
+          if (el.item_id === `${data[i].name}`) {
+            const countOfLikes = el.likes;
+            if (countOfLikes === 1) {
+              h5.innerHTML = `${countOfLikes} like`;
+            } else if (countOfLikes === 1) {
+              h5.innerHTML = '0 likes';
+            } else {
+              h5.innerHTML = `${countOfLikes} likes`;
+            }
           }
-        }
-      });
+        });
+      }, 600);
     });
 
     showDiv.append(h4);
@@ -78,6 +81,7 @@ const fetchShows = async () => {
     });
 
     showsSection.append(div);
+    getShowsCount();
   }
 };
 
