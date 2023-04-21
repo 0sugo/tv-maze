@@ -101,8 +101,8 @@ async function getShows(fixedId) {
           const response = await fetch(involvementUrl);
           const data2 = await response.json();
 
-          counter(h62, data2);
-
+          counter(ctr,commentP);
+      
           data2.forEach((element) => {
             const p = document.createElement('li');
 
@@ -112,8 +112,11 @@ async function getShows(fixedId) {
             p.textContent += ':';
             p.textContent += element.comment;
             commentP.append(p);
+            document.getElementById('insight').value = '';
+            document.getElementById('named').value = '';
           });
         }, 600);
+
       });
 
       const h6 = document.createElement('h6');
