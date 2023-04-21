@@ -12,6 +12,11 @@ const fetchComments = async (item1, insertP) => {
     p.textContent += element.comment;
     insertP.append(p);
   });
+  setTimeout(() => {
+    const counter = insertP.childElementCount;
+    const ctr = document.querySelector('#ctr');
+    ctr.innerHTML = `Comments ${counter}`;
+  }, 1);
 };
 
 export default fetchComments;
