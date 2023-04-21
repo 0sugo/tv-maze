@@ -1,9 +1,15 @@
 const countTag = document.getElementById('shows-count');
-countTag.innerHTML = '';
+
+if (countTag !== null) {
+  countTag.innerHTML = '';
+}
 
 const getShowsCount = async () => {
   const shows = document.getElementsByClassName('show-card');
-  countTag.innerHTML = `(${shows.length})`;
+
+  if (countTag !== null) {
+    countTag.innerHTML = `(${shows.length})`;
+  }
 };
 
 export default getShowsCount;
