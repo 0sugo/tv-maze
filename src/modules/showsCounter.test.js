@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { TextEncoder, TextDecoder } from 'text-encoding';
 
 import getShowsCount from './showsCounter.js';
@@ -6,10 +5,7 @@ import getShowsCount from './showsCounter.js';
 Object.assign(global, { TextEncoder, TextDecoder });
 
 describe('get length of shows', () => {
-  let dom;
-
   beforeEach(() => {
-    // eslint-disable-next-line import/no-extraneous-dependencies, global-require
     document.body.innerHTML = `
         <a href="" class="menu-link" >
           Movies<span id="shows-count"></span>
