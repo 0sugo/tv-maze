@@ -12,11 +12,19 @@ body {
   font-family: 'Bebas Neue', cursive;
 }
 
+.menu-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 60%;
+  margin-left: 11%;
+}
+
 a {
   color: #000;
   text-decoration: none;
   font-size: 1.4rem;
-  margin-right: 12px;
 }
 
 /* popup */
@@ -237,7 +245,6 @@ a:nth-child(1) {
 
 .navbar {
   display: flex;
-  align-items: center;
   padding: 12px 32px;
 }
 
