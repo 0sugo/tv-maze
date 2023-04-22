@@ -1,15 +1,11 @@
 const fetchComments = async (item1, insertP) => {
-  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/comments?item_id=${item1}`);
+  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uqwxRfgCp5Q5KfywJwpo/comments?item_id=${item1}`);
   const result = await response.json();
+  insertP.innerHTML = '';
 
   result.forEach((element) => {
     const p = document.createElement('li');
-
-    p.textContent += element.creation_date;
-    p.textContent += ' ';
-    p.textContent += element.username;
-    p.textContent += ':';
-    p.textContent += element.comment;
+    p.textContent = `${element.creation_date} ${element.username} : ${element.comment}`;
     insertP.append(p);
   });
   setTimeout(() => {

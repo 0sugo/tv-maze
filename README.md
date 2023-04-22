@@ -70,7 +70,7 @@ JavaScript Capstone Project
 
 
 ## 🎥 Video Explanation <a name="video-explanation"></a>
-Click <a href="">here</a> for the video explanation about how the app works
+Click <a href="https://drive.google.com/file/d/1ElmfA8bPaceX5a3SqubofXcmKWVbfMK0/view?usp=share_link">here</a> for the video explanation about how the app works
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 Coming Soon

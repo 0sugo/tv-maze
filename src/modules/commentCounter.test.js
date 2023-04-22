@@ -1,9 +1,8 @@
-// const counter = require('./commentCounter');
-const { JSDOM } = require('jsdom');
+// const { JSDOM } = require('jsdom');
 
 const mockData = [{ comment: 'Hello', creation_date: '2023-04-20', username: 'Jane' }, { comment: 'cocoa', creation_date: '2023-04-20', username: 'rose' }];
 
-const { document } = new JSDOM().window;
+// const { document } = new JSDOM().window;
 
 global.fetch = jest.fn(() => Promise.resolve({
   json: () => Promise.resolve(mockData),

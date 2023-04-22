@@ -53,15 +53,19 @@ async function getShows(fixedId) {
       featureList.className = 'feature-list';
 
       const itemGenre = document.createElement('li');
+      itemGenre.className = 'feature-item';
       itemGenre.textContent = `Genres:${data[fixedId].genres}`;
 
       const itemRating = document.createElement('li');
+      itemRating.className = 'feature-item';
       itemRating.textContent = `Rating:${data[fixedId].rating.average}`;
 
       const itemLanguage = document.createElement('li');
+      itemLanguage.className = 'feature-item';
       itemLanguage.textContent = `Language:${data[fixedId].language}`;
 
       const itemPremiered = document.createElement('li');
+      itemPremiered.className = 'feature-item';
       itemPremiered.textContent = `Premiered:${data[fixedId].premiered}`;
 
       featureList.append(itemGenre, itemRating, itemLanguage, itemPremiered);
@@ -69,7 +73,7 @@ async function getShows(fixedId) {
       popupBody.append(popupInfo);
 
       const comments = document.createElement('div');
-      comments.className = 'comment';
+      comments.className = 'comments';
 
       const addComment = document.createElement('div');
       addComment.className = 'add-comment';
@@ -80,8 +84,8 @@ async function getShows(fixedId) {
         e.preventDefault();
         const desiredName = document.getElementById('named').value;
         const desiredInsights = document.getElementById('insight').value;
-        const involvementUrl2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/comments';
-        const involvementUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/comments?item_id=${data[fixedId].name}`;
+        const involvementUrl2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uqwxRfgCp5Q5KfywJwpo/comments';
+        const involvementUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uqwxRfgCp5Q5KfywJwpo/comments?item_id=${data[fixedId].name}`;
 
         fetch(involvementUrl2, {
           method: 'POST',
@@ -101,22 +105,17 @@ async function getShows(fixedId) {
           const response = await fetch(involvementUrl);
           const data2 = await response.json();
           const ctr = document.getElementById('ctr');
-
           counter(ctr, commentP);
 
           data2.forEach((element) => {
             const p = document.createElement('li');
 
-            p.textContent += element.creation_date;
-            p.textContent += ' ';
-            p.textContent += element.username;
-            p.textContent += ':';
-            p.textContent += element.comment;
+            p.textContent = `${element.creation_date} ${element.username} : ${element.comment}`;
             commentP.append(p);
             document.getElementById('insight').value = '';
             document.getElementById('named').value = '';
           });
-        }, 600);
+        }, 900);
       });
 
       const h6 = document.createElement('h6');

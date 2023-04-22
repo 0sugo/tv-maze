@@ -4,7 +4,7 @@ import fetchLikes from './showLikes.js';
 import getShowsCount from './showsCounter.js';
 
 const url = 'https://api.tvmaze.com/shows';
-const involvementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LR60RRSADfy5uTrj8R5e/likes';
+const involvementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uqwxRfgCp5Q5KfywJwpo/likes';
 const showsSection = document.getElementById('allShows');
 
 const fetchShows = async () => {
