@@ -15,9 +15,10 @@ body {
 .menu-links {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
   width: 60%;
-  margin: 0 auto;
+  margin-left: 11%;
 }
 
 a {
@@ -244,7 +245,6 @@ a:nth-child(1) {
 
 .navbar {
   display: flex;
-  align-items: center;
   padding: 12px 32px;
 }
 
