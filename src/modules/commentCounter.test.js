@@ -3,6 +3,12 @@ const mockData1 = [];
 const mockData = [{ comment: 'Hello', creation_date: '2023-04-20', username: 'Jane' }, { comment: 'cocoa', creation_date: '2023-04-20', username: 'rose' }];
 
 // const { document } = new JSDOM().window;
+// Function to add comment with current count
+const counter = async (elements, array) => {
+  setTimeout(() => {
+    elements.innerHTML = `Comments ${array.childElementCount}`;
+  }, 100);
+};
 
 const getData = async () => {
   const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uqwxRfgCp5Q5KfywJwpo/comments?item_id=Under the Dome');
@@ -49,14 +55,13 @@ describe('Check if length of API result is 0', () => {
 // Test if API is null
 describe('Check if length of API result is 0', () => {
   attach(mockData1);
-  it('Confirms if child elements of arraytry is 0', () => {
+  it('Confirms child elements of array try is 0', () => {
     expect(`Comments ${arrayTry.childElementCount}`).toBe('Comments 0');
   });
 });
 
 // Test for adding elementsAdding elements
 describe('Check if length of child elements has been updated', () => {
-// attach(mockData);
   document.body.innerHTML = `
   <h5 id="index"></h5>
   <ul id="tarray">
@@ -70,10 +75,3 @@ describe('Check if length of child elements has been updated', () => {
     expect(`Comments ${tarray.childElementCount}`).toBe('Comments 3');
   });
 });
-
-// Function to add comment with current count
-const counter = async (elements, array) => {
-  setTimeout(() => {
-    elements.innerHTML = `Comments ${array.childElementCount}`;
-  }, 100);
-};
