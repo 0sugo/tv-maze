@@ -107,7 +107,6 @@ async function getShows(fixedId) {
           const ctr = document.getElementById('ctr');
           counter(ctr, commentP);
 
-
           data2.forEach((element) => {
             const p = document.createElement('li');
 
@@ -117,8 +116,6 @@ async function getShows(fixedId) {
             document.getElementById('named').value = '';
           });
         }, 900);
-        
-
       });
 
       const h6 = document.createElement('h6');
