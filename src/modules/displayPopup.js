@@ -105,23 +105,20 @@ async function getShows(fixedId) {
           const response = await fetch(involvementUrl);
           const data2 = await response.json();
           const ctr = document.getElementById('ctr');
-
           counter(ctr, commentP);
 
+
           data2.forEach((element) => {
-            commentP.innerHTML = '';
             const p = document.createElement('li');
 
-            p.textContent += element.creation_date;
-            p.textContent += ' ';
-            p.textContent += element.username;
-            p.textContent += ':';
-            p.textContent += element.comment;
+            p.textContent = `${element.creation_date} ${element.username} : ${element.comment}`;
             commentP.append(p);
             document.getElementById('insight').value = '';
             document.getElementById('named').value = '';
           });
-        }, 600);
+        }, 900);
+        
+
       });
 
       const h6 = document.createElement('h6');
