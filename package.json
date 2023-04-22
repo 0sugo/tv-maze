@@ -1,0 +1,58 @@
+{
+    "name": "tv-maze",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "webpack serve --open",
+        "build": "webpack",
+        "stylelint": "stylelint \"**/*.{css,scss}\"",
+        "eslint": "eslint .",
+        "hint": "hint .",
+        "test": "jest --watchAll --coverage",
+        "fix": "stylelint \"**/*.{css,scss}\" --fix && eslint . --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/0sugo/tv-maze.git"
+    },
+    "keywords": [],
+    "author": "",
+    "bugs": {
+        "url": "https://github.com/0sugo/tv-maze/issues"
+    },
+    "homepage": "https://github.com/0sugo/tv-maze#readme",
+    "devDependencies": {
+        "@babel/plugin-transform-modules-commonjs": "^7.21.2",
+        "babel-eslint": "10.x",
+        "css-loader": "^6.7.3",
+        "eslint": "7.x",
+        "eslint-config-airbnb-base": "14.x",
+        "eslint-plugin-import": "2.x",
+        "file-loader": "^6.2.0",
+        "hint": "7.x",
+        "html-webpack-plugin": "^5.5.0",
+        "jest": "^29.5.0",
+        "jest-environment-jsdom": "^29.5.0",
+        "postcss": "^8.4.21",
+        "postcss-loader": "^7.1.0",
+        "postcss-preset-env": "^8.2.0",
+        "style-loader": "^3.3.2",
+        "stylelint": "13.x",
+        "stylelint-config-standard": "21.x",
+        "stylelint-csstree-validator": "1.x",
+        "stylelint-scss": "3.x",
+        "tailwindcss": "^3.3.0",
+        "url-loader": "^4.1.1",
+        "webpack": "^5.76.3",
+        "webpack-cli": "^5.0.1",
+        "webpack-dev-server": "^4.13.1"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21",
+        "text-encoding": "^0.7.0"
+    },
+    "jest": {
+        "testEnvironment": "jsdom"
+    }
+}
